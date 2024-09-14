@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import '../data/hive_data_store.dart';
+import '../models/task.dart';
+import '../views/home/home_view.dart';
+
 Future<void> main() async {
   await Hive.initFlutter();
   Hive.registerAdapter<Task>(TaskAdapter());

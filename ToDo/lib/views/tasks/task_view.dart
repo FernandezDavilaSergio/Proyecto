@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 import '../../main.dart';
 import '../../models/task.dart';
 import '../../utils/colors.dart';
-import '../../utils/constanst.dart';
+import '../../utils/constants.dart';
 import '../../utils/strings.dart';
 
 class TaskView extends StatefulWidget {

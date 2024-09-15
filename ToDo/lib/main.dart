@@ -32,7 +32,7 @@ class BaseWidget extends InheritedWidget{
     if(base != null) {
       return base;
     } else {
-      throw StateError('No se pudo encontrar un widget superior de tipo BaseWidget'')
+      throw StateError('No se pudo encontrar un widget superior de tipo BaseWidget');
     }
   }
 

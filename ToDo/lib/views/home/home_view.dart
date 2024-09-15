@@ -8,7 +8,7 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import '../../main.dart';
 import '../../models/task.dart';
 import '../../utils/colors.dart';
-import '../../utils/constanst.dart';
+import '../../utils/constants.dart';
 import '../../views/home/widgets/task_widget.dart';
 import '../../views/tasks/task_view.dart';
 import '../../utils/strings.dart';
@@ -26,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
   int checkDondeTask(List<Task> task) {
     int i = 0;
     for(Task doneTaks in task){
-      if(donetasks.isCompleted){
+      if(doneTasks.isCompleted){
         i++;
       }
     }
@@ -119,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
                         height: 3
                     ),
                     Text(
-                        "${chackDoneTask(tasks)} de ${tasks.length} "
+                        "${checkDondeTask(tasks)} de ${tasks.length} "
                             "tareas completadas", style: textTheme.subtitle1
                     ),
                   ],
@@ -141,7 +141,7 @@ class _HomeViewState extends State<HomeView> {
           SizedBox(
             width: double.infinity,
             height: 585,
-            child: tasks.inNotEmpty
+            child: tasks.isNotEmpty
                 ? ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemCount: tasks.length,
@@ -191,7 +191,7 @@ class _HomeViewState extends State<HomeView> {
                     ),
                 ),
 
-                FadeIn(
+                FadeInUp(
                     from: 30,
                     child: const Text(
                         MyString.doneAllTask

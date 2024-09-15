@@ -111,7 +111,7 @@ class _TaskViewState extends State<TaskView> {
           createdAtDate: date,
           subtitle: subtitle,
         );
-        BaseWidget.of(context).dataStore.addTask(task: task);
+        BaseWidget.of(context).dataStore.addTask(task);
         Navigator.of(context).pop();
       } else {
         emptyFieldsWarning(context);
@@ -465,7 +465,7 @@ class _TaskViewState extends State<TaskView> {
   }
 }
 
-class MyAppBar extends StatelessWidget with PreferredSizeWidget {
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({Key? key}) : super(key: key);
 
   @override

@@ -21,12 +21,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  GlobalKey<SliderMenuContainerState> dKey = GlobalKey<SliderDrawerState>();
+  GlobalKey<SliderDrawerState> dKey = GlobalKey<SliderDrawerState>();
 
-  int checkDondeTask(List<Task> task) {
+  int checkDoneTask(List<Task> task) {
     int i = 0;
-    for(Task doneTaks in task){
-      if(doneTasks.isCompleted){
+    for (Task doneTasks in task) {
+      if (doneTasks.isCompleted) {
         i++;
       }
     }
@@ -103,7 +103,7 @@ class _HomeViewState extends State<HomeView> {
                   child: CircularProgressIndicator(
                     valueColor: const AlwaysStoppedAnimation(MyColors.primaryColor),
                     backgroundColor: Colors.grey,
-                    value: checkDondeTask(tasks) / valueOfTheIndicator(tasks),
+                    value: checkDoneTask(tasks) / valueOfTheIndicator(tasks),
                   ),
                 ),
                 const SizedBox(
@@ -119,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
                         height: 3
                     ),
                     Text(
-                        "${checkDondeTask(tasks)} de ${tasks.length} "
+                        "${checkDoneTask(tasks)} de ${tasks.length} "
                             "tareas completadas", style: textTheme.subtitle1
                     ),
                   ],
@@ -285,7 +285,7 @@ class MySlider extends StatelessWidget {
   }
 }
 
-class MyAppBar extends StatefulWidget with PreferredSizeWidget {
+class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   MyAppBar ({Key? key, required this.drawerKey}) : super(key: key);
 
   GlobalKey<SliderDrawerState> drawerKey;
